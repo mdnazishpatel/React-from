@@ -1,0 +1,152 @@
+{/*
+
+let [uname, setuname] = useState('')
+  let [Password, setpassword] = useState('')
+  let handleSubmit = (event) => {
+    event.preventDefault()
+    console.log(uname, Password)  
+  }*/}
+
+
+
+      {/*
+    <div className="App">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-lg-6'>
+            <form onSubmit={handleSubmit}>
+              <div className='text-start my-3'>
+                <label>Username</label>
+                <input type='text' onChange={(event) => setuname(event.target.value)} className='form-control' value={uname}></input>
+              </div>
+              <div className='text-start my-3'>
+                <label> Password</label>
+                <input type='text' onChange={(event) => setpassword(event.target.value)} className='form-control' value={Password}></input>
+              </div>
+              <div className='text-start my-3'>
+                <button type='submit'>Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>*/}
+{/*
+    import logo from './logo.svg';
+    import './App.css';
+    import { useState } from 'react';
+    import { Col, Container, Row, Table, form } from 'react-bootstrap';
+    
+    function App() {
+      let [formData,setformData] = useState(
+        {
+          uname: '',
+          uemail: '',
+          uphone: '',
+          umessage: '',
+          index: ''
+        }
+      )
+      let [userData,setuserData] = useState([])
+    let getValue=(event)=> {
+    let oldData={...formData}
+    let inputName =event.target.name
+    let inputValue =event.target.value
+    oldData[inputName]= inputValue
+    setformData(oldData)
+      }
+    
+    
+    let handleSubmit=(event)=>{
+      let currentuserFormData ={
+        uname:formData.uname,
+        uemail:formData.uemail,
+        uphone:formData.uphone,
+        umessage:formData.umessage,
+        
+      }
+    
+    
+      let olduserData={...userData,currentuserFormData}
+      console.log(olduserData)
+      setuserData(olduserData)
+    event.preventDefault()
+    }
+    
+      return (
+    
+    
+      <Container fluid>
+        <Container>
+          <Row>
+            <Col className='text-centre py-5'>
+              <h1>Enquiry now</h1></Col>
+          </Row>
+          <Row>
+            <Col lg={5}>
+            {userData.length}
+              <form onSubmit={handleSubmit}>
+                <div className='pb-3'>
+                  <label className='form-label'>Name</label>
+                  <input type='text' onChange={getValue} value={formData.uname} name='uname' className='form-control'></input>
+                </div>
+                <div className='pb-3'>
+                  <label className='form-label'>Email</label>
+                  <input type='email' onChange={getValue} value={formData.uemail} name='uemail' className='form-control'></input>
+                </div>
+                <div className='pb-3'>
+                  <label className='form-label'>phone</label>
+                  <input type='number'onChange={getValue} value={formData.uphone} name='uphone' className='form-control'></input>
+                </div>
+                <div class='mb-3'>
+                  <label for="" className='form-label'>Message</label>
+                  <textarea class="ofrm-control" onChange={getValue} value={formData.umessage} name="umessage" id="" rows="3" ></textarea>
+                </div>
+                <button className='btn btn-primary'>
+                  {
+                    formData.index!=="" ? 'update' : 'save'
+                  }
+                </button>
+              </form>
+            </Col>
+            <Col lg={7}>
+            <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>PHONE</th>
+              <th>Message</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData.length>=1 ? 
+            
+            <tr>
+            <td>1</td>
+            <td>{formData.uname}</td>
+            <td>{formData.uemail}</td>
+            <td>{formData.uphone}</td>
+            <td>{formData.umessage}</td>
+            <td>
+              <button>delete</button>
+              <button>udate</button>
+                 </td>
+                   </tr>
+            
+      :
+      <td colSpan={6}>no data found</td>
+          }
+             </tbody>
+             </Table>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+     );
+    }
+    
+    export default App;
+        /*}
